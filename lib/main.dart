@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import '/mock_database.dart';
 import '/todo_repository.dart';
+import 'mock_database.dart';
 import 'home/home_page.dart';
 
 void main() {
-  // Общий MockDatabase и Repository
+  // Общий экземпляр базы и репозитория
   final db = MockDatabase();
   final repo = TodoRepositoryImpl(db);
 
@@ -26,3 +26,4 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+

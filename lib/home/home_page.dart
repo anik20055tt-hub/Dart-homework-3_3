@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:hw_3_3/add_todo.dart/add_todo_view.dart';
 import '../todo_repository.dart';
-import '../add_todo.dart/add_todo_view.dart';
+
 import 'home_cubit.dart';
 import 'home_state.dart';
 import 'home_view_model.dart';
@@ -43,6 +44,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 final todo = state.items[index];
                 return ListTile(
                   title: Text(todo.title),
+                  subtitle: Text('Дата: ${DateTime.fromMillisecondsSinceEpoch(todo.date)}'),
+                  trailing: todo.isFinished ? const Icon(Icons.check) : null,
                 );
               },
             );

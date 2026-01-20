@@ -4,7 +4,7 @@ class Todo {
   final bool isFinished;
   final int date;
 
-  const Todo({
+  Todo({
     required this.id,
     required this.title,
     required this.isFinished,

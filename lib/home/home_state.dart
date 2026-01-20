@@ -5,9 +5,9 @@ class HomeState {
   final bool isLoading;
   final String? error;
 
-  const HomeState({required this.items, required this.isLoading, this.error});
+  const HomeState({required this.items, required this.isLoading, required this.error});
 
-  factory HomeState.initial() => const HomeState(items: [], isLoading: false);
+  factory HomeState.initial() => const HomeState(items: [], isLoading: false, error: null);
 
   HomeState copyWith({
     List<Todo>? items,
@@ -17,7 +17,7 @@ class HomeState {
     return HomeState(
       items: items ?? this.items,
       isLoading: isLoading ?? this.isLoading,
-      error: error,
+      error: error ?? this.error,
     );
   }
 }

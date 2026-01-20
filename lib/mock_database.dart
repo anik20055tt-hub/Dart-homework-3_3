@@ -19,4 +19,3 @@ class MockDatabase {
     return _items;
   }
 }
-

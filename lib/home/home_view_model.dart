@@ -1,11 +1,9 @@
-import '../todo.dart';
 import '../todo_repository.dart';
+import '../todo.dart';
 
 class HomeViewModel {
   final TodoRepository repo;
   HomeViewModel({required this.repo});
 
-  Future<List<Todo>> getTodos() async {
-    return repo.fetchList();
-  }
+  Future<List<Todo>> loadList() => repo.fetchList();
 }

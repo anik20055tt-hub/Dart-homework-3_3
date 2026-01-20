@@ -4,16 +4,15 @@ import 'home_view_model.dart';
 
 class HomeCubit extends Cubit<HomeState> {
   final HomeViewModel vm;
-
   HomeCubit({required this.vm}) : super(HomeState.initial());
 
   Future<void> init() async {
     emit(state.copyWith(isLoading: true, error: null));
     try {
-      final items = await vm.getTodos();
-      emit(state.copyWith(items: items, isLoading: false));
+      final items = await vm.loadList();
+      emit(state.copyWith(isLoading: false, items: items));
     } catch (e) {
-      emit(state.copyWith(error: e.toString(), isLoading: false));
+      emit(state.copyWith(isLoading: false, error: e.toString()));
     }
   }
 }

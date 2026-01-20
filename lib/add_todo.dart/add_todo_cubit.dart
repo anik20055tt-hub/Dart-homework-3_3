@@ -1,6 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'add_todo_state.dart';
 import 'add_todo_view_model.dart';
+import 'add_todo_state.dart';
 
 class AddTodoCubit extends Cubit<AddTodoState> {
   final AddTodoViewModel viewModel;
